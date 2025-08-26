@@ -36,8 +36,13 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline">
-              Acessar
+            <Button 
+              variant="outline" 
+              asChild
+            >
+              <a href="https://zapsalespro.com.br/" target="_blank" rel="noopener noreferrer">
+                Acessar
+              </a>
             </Button>
             <Button variant="hero">
               Começar agora
@@ -74,8 +79,13 @@ const Header = () => {
                 Suporte
               </a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline">
-                  Acessar
+                <Button 
+                  variant="outline" 
+                  asChild
+                >
+                  <a href="https://zapsalespro.com.br/" target="_blank" rel="noopener noreferrer">
+                    Acessar
+                  </a>
                 </Button>
                 <Button variant="hero">
                   Começar agora
