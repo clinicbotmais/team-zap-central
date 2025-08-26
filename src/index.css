@@ -1,42 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ZapSalesPro Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    /* ZapSalesPro Brand Colors */
+    --brand-primary: 142 71% 35%; /* #16A34A */
+    --brand-primary-dark: 142 82% 26%; /* #0E7A36 */
+    --brand-charcoal: 217 33% 17%; /* #111827 */
+    
+    /* WhatsApp Green for floating button */
+    --whatsapp: 142 70% 49%; /* #25D366 */
+    
+    /* Neutral Scale */
+    --neutral-900: 217 33% 17%; /* #111827 */
+    --neutral-700: 213 20% 27%; /* #374151 */
+    --neutral-500: 215 16% 47%; /* #6B7280 */
+    --neutral-100: 218 11% 95%; /* #F3F4F6 */
+    --neutral-50: 0 0% 100%; /* #FFFFFF */
+    
+    /* Semantic tokens */
+    --background: var(--neutral-50);
+    --foreground: var(--neutral-900);
+    
+    --card: var(--neutral-50);
+    --card-foreground: var(--neutral-900);
+    
+    --popover: var(--neutral-50);
+    --popover-foreground: var(--neutral-900);
+    
+    --primary: var(--brand-primary);
+    --primary-foreground: var(--neutral-50);
+    
+    --secondary: var(--neutral-100);
+    --secondary-foreground: var(--neutral-900);
+    
+    --muted: var(--neutral-100);
+    --muted-foreground: var(--neutral-500);
+    
+    --accent: var(--brand-primary);
+    --accent-foreground: var(--neutral-50);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: var(--neutral-50);
+    
+    --border: var(--neutral-100);
+    --input: var(--neutral-100);
+    --ring: var(--brand-primary);
+    
+    --radius: 12px;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-primary-dark)));
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--neutral-50)), hsl(var(--neutral-100)));
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--brand-primary) / 0.1);
+    --shadow-card: 0 1px 3px 0 hsl(var(--neutral-900) / 0.1), 0 1px 2px -1px hsl(var(--neutral-900) / 0.1);
+    --shadow-elevated: 0 10px 25px -3px hsl(var(--neutral-900) / 0.1), 0 4px 6px -4px hsl(var(--neutral-900) / 0.1);
+    
+    /* Animations */
+    --transition-smooth: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +130,28 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .card-feature {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-card hover:shadow-elevated transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-primary-dark)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

@@ -19,6 +19,20 @@ export default {
 		},
 		extend: {
 			colors: {
+				// ZapSalesPro brand colors
+				'brand-primary': 'hsl(var(--brand-primary))',
+				'brand-primary-dark': 'hsl(var(--brand-primary-dark))',
+				'brand-charcoal': 'hsl(var(--brand-charcoal))',
+				'whatsapp': 'hsl(var(--whatsapp))',
+				
+				// Neutral scale
+				'neutral-900': 'hsl(var(--neutral-900))',
+				'neutral-700': 'hsl(var(--neutral-700))',
+				'neutral-500': 'hsl(var(--neutral-500))',
+				'neutral-100': 'hsl(var(--neutral-100))',
+				'neutral-50': 'hsl(var(--neutral-50))',
+				
+				// Semantic colors
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -62,6 +76,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				}
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'card': 'var(--shadow-card)',
+				'elevated': 'var(--shadow-elevated)'
+			},
+			fontFamily: {
+				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+				'display': ['Manrope', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif']
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
